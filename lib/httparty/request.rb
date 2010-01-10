@@ -77,6 +77,10 @@ module HTTParty
         else
           http.verify_mode = OpenSSL::SSL::VERIFY_NONE
         end
+        
+        if options[:debug_output]
+          http.set_debug_output(options[:debug_output])
+        end
 
         http
       end
